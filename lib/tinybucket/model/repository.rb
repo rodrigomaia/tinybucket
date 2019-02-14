@@ -128,6 +128,14 @@ module Tinybucket
         branches_resource(options)
       end
 
+      # Get issues on this repository
+      #
+      # @param options [Hash]
+      # @return [Tinybucket::Resource::Issues]
+      def issues(options = {})
+        issues_resource(options)
+      end
+
       # Get the specific branch on this repository.
       #
       # @param branch [String]
@@ -181,6 +189,10 @@ module Tinybucket
 
       def branches_resource(options = {})
         Tinybucket::Resource::Branches.new(self, options)
+      end
+
+      def issues_resource(options = {})
+        Tinybucket::Resource::Issues.new(self, options)
       end
 
       def commits_resource(options = {})
