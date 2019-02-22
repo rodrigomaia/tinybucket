@@ -8,6 +8,9 @@ module Tinybucket
         @args = [options]
       end
 
+      def repo_owner= x
+        puts x
+      end
       # Find the issue
       #
       # @param issue [String]

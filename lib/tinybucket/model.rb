@@ -7,6 +7,7 @@ module Tinybucket
     [
       :Base,
       :Branch,
+      :Issue,
       :BranchRestriction,
       :BuildStatus,
       :Comment,

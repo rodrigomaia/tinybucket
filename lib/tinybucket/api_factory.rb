@@ -11,7 +11,7 @@ module Tinybucket
           rescue => e
             # TODO: log exception
             Tinybucket.logger.error e
-            raise ArgumentError, 'must provide klass to be instantiated'
+            raise ArgumentError, "must provide klass to be instantiated: [#{e.message}]"
           end
 
         klass.new

@@ -20,7 +20,7 @@ module Tinybucket
     class Issue < Base
       include Tinybucket::Model::Concerns::RepositoryKeys
 
-      acceptable_attributes :links, :type, :name, :repository
+      acceptable_attributes :links, :type, :name, :repo_owner, :repository, :target
 
       private
 
