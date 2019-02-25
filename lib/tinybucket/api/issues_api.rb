@@ -28,6 +28,21 @@ module Tinybucket
         )
       end
 
+
+      # Send 'POST a build status for a commit' request
+      #
+      # @param revision [String]
+      # @param key [String]
+      # @param options [Hash]
+      # @return [Tinybucket::Model::Issue]
+      def post(options)
+        post_path(
+          base_path,
+          options,
+          get_parser(:object, Tinybucket::Model::Issue)
+        )
+      end
+
       # Send 'GET an individual issue' request
       #
       # @see https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Busername%7D/%7Brepo_slug%7D/issues/%7Bname%7D#get

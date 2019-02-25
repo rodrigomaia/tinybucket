@@ -11,6 +11,7 @@ module Tinybucket
       def repo_owner= x
         puts x
       end
+
       # Find the issue
       #
       # @param issue [String]
@@ -19,6 +20,17 @@ module Tinybucket
       def find(issue, options = {})
         issues_api.find(issue, options).tap do |m|
           inject_repo_keys(m, @repo.repo_keys)
+        end
+      end
+
+      # Create a issue
+      #
+      # @param key [String]
+      # @param options [Hash]
+      # @return [Tinybucket::Model::Issue]
+      def create(options)
+        issues_api.post(options).tap do |m|
+          m.repo_keys = @repo.repo_keys
         end
       end
 
